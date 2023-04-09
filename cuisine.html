@@ -1,0 +1,309 @@
+<!doctype html>
+<html >
+  <head>
+	<meta charset="UTF-8">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/1f8130e8d8.js" crossorigin="anonymous"></script>
+    <title>Visit Taniti Island - The Official Website</title>
+
+    <style>
+      
+      a.footer-main-links:link, a.privacy-policy-link:link, a.footer-main-links:visited, a.privacy-policy-link:visited {
+        color: #496ec7;
+        background-color: transparent;
+        text-decoration: underline;
+      }
+      a.footer-main-links:hover, a.privacy-policy-link:hover {
+        color: #021440;
+        background-color: transparent;
+        text-decoration: underline;
+      }
+  
+    </style>
+
+</head>
+  <body>
+
+    <!--Header-->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          
+            <a href="./home.html"><img class="navbar-brand" src="images/Taniti-logo-water.png" width="300" height="110.8" alt="Taniti's logo"></a>
+          <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar">
+            <span class="visually-hidden">Toggle navigation</span>
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div id="navbar" class="collapse navbar-collapse">
+            <div class="row ms-auto">
+              <div class="col-12 ps-0">
+                <ul class="navbar-nav float-none float-lg-end d-flex justify-content-start" style="background-color: white;">
+                  
+                  <li class="nav-item ps-lg-2 pe-lg-3">
+                    <a class="nav-link" href="./home.html">Home</a>
+                  </li>
+                  <li class="nav-item ps-lg-2 pe-lg-2">
+                    <a class="nav-link" href="./activities.html">Activities</a>
+                  </li>
+                  <li class="nav-item ps-lg-2 pe-lg-2">
+                    <a class="nav-link" href="./lodging.html">Lodging</a>
+                  </li>
+                  <li class="nav-item ps-lg-2 pe-lg-2">
+                    <a class="nav-link" href="./cuisine.html">Cuisine</a>
+                  </li>
+                  <li class="nav-item ps-lg-2 pe-lg-2">
+                    <a class="nav-link" href="./transportation.html">Transportation</a>
+                  </li>
+                  <li class="nav-item ps-lg-2 pe-lg-2">
+                    <a class="nav-link" href="./faq.html">FAQ</a>
+                  </li>
+                  <li class="nav-item ps-lg-2">
+                    <a class="nav-link" href="./book-now.html">Book Now!</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-12 ps-0 order-md-first" style="font-size: small; padding-bottom: 10px;">
+                <ul class="navbar-nav d-flex justify-content-end float-lg-end float-none" style="background-color: white;">
+                  <li class="nav-item">
+                     <a class="nav-link" href="./photos.html">Photos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./events.html">Events</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./login.html">
+                        <i class="fa-sharp fa-solid fa-arrow-right-to-bracket"></i> Login
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./register.html">
+                      <i class="fa-solid fa-user"></i> Register
+                    </a>
+                  </li>
+                  <li class="nav-item dropdown" style="margin-right: 10px;">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      EN
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <li><a onClick=selectEn() class="dropdown-item" >EN</a></li>
+                      <li><a onClick=selectEs() class="dropdown-item" >ES</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <div class="input-group">
+                      <input type="text" class="form-control" aria-describedby="basic-addon2">
+                      <div class="input-group-append">
+                        <button onclick=loadContactPage() id="search-button" class="btn btn-outline-secondary" type="button">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </nav>
+    </header>
+    
+
+    <!--Restaurant-->
+
+    <div style="display: none;" id="spanish-message">
+      <p style="padding-right:10px; padding-top: 10px;">*Spanish selected. Language does not update within this prototype. </p>
+    </div>
+
+    <div class="pt-4 ps-5">
+        <H4 style="color: #555454;">Cuisine</H4>
+    </div>
+
+    <!--Restaurant #1-->
+
+    <div class="container mt-5">
+
+        <div class="row pt-3 pb-3 ps-3 pe-3 d-flex justify-content-center" style="background-color: #d3d9e7; ">
+                
+            <div class="col-4">
+              <div class="row mt-2 me-1 ms-1 pt-3 bg-light" style="height: 96%">
+                  <div class="col-12" style="color: #676767;">
+                      <p style="text-align: center">Restaurant #1</p>
+                      <div style="font-size: small;">
+                          <p style="text-align: center;">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                               ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                                 cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                                 non proident, sunt in culpa qui officia laborum.
+                          </p>
+                          <p style="text-align: center;">Address, street line <br> City, State. Zip code</p>
+                          
+                          <p style="text-align: center;">More information <a href="./placeholder-site.html">here.</a></p>
+                      </div>
+                  </div>
+
+              </div>
+            </div>
+
+            <div class="col-8 mt-2 mb-3" style="border-radius: 5px;">
+                <img src="images/restaurant1.jpeg" style="width: 100%;"> 
+            </div>
+              
+
+        </div>   
+      
+    </div>
+
+    <!--Restaurant #2-->
+
+    <div class="container mt-5 mb-5">
+
+        <div class="row pt-3 pb-3 ps-3 pe-3 d-flex justify-content-center" style="background-color: #d3d9e7; ">
+                
+            <div class="col-4">
+              <div class="row mt-2 me-1 ms-1 pt-3 bg-light" style="height: 96%">
+                  <div class="col-12" style="color: #676767;">
+                      <p style="text-align: center">Restaurant #2</p>
+                      <div style="font-size: small;">
+                          <p style="text-align: center;">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                               ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                                 cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                                 non proident, sunt in culpa qui officia laborum.
+                          </p>
+                          <p style="text-align: center;">Address, street line <br> City, State. Zip code</p>
+                          
+                          <p style="text-align: center;">More information <a href="./placeholder-site.html">here.</a></p>
+                      </div>
+                  </div>
+
+              </div>
+            </div>
+
+            <div class="col-8 mt-2 mb-3" style="border-radius: 5px;">
+                <img src="images/restaurant2.webp" style="width: 100%;"> 
+            </div>
+        </div>   
+      
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 bg-light" style= "color:#676767;" >
+      <div style="width: 99%;">
+          <div class="row">
+              <div class="p-2 col-4">
+                  <div class="align-middle" style="margin-left:10px; margin-top: 10px; margin-bottom: 10px;">
+                      <img style="display: block; margin-left: auto;margin-right: auto" src="./images/logo-3.png" width="140" height="83.1"
+                       alt="Taniti Island's logo"/>
+                  </div>
+                  <div style="font-size:small;">
+                      <p style="text-align: center;">Address street line <br>
+                          City, State. Zipcode</p>
+                      <p style="text-align: center;">000-000-0000<br>
+                          email@email.com</p>
+                  </div>
+              </div>
+              <div class="p-2 col-4" style="font-size:small;">
+                  <div class="align-middle pt-3 mt-4" style="background-color: white;">
+                      <div class="row">
+                          <div style="text-align: center;">
+                              <p> <a class="footer-main-links pe-2" href="./home.html">Home</a> | <a class="ps-2 pe-2 footer-main-links" href="./activities.html">Activities</a> |
+                                <a class="ps-2 pe-2 footer-main-links" href="./lodging.html">Lodging</a> | <a class="ps-2 pe-2 footer-main-links" href="./cuisine.html">Cuisine</a>
+                                | <a class="ps-2 footer-main-links" href="./transportation.html">Transportation</a>
+                              </p>
+                          </div>
+                      </div> 
+                      <div class="row">
+                        <div style="text-align: center;">
+                            <p> <a class="footer-main-links pe-2" href="./photos.html">Photos</a> | <a class="ps-2 pe-2 footer-main-links" href="./events.html">Events</a> |
+                              <a class="ps-2 pe-2 footer-main-links" href="./login.html">Login</a> | <a class="ps-2 footer-main-links" href="./register.html">Register</a>
+                            </p>
+                        </div>
+                    </div> 
+                    <div class="row">
+                      <div style="text-align: center;">
+                          <p> | <a class="footer-main-links ps-2 pe-2" href="./book-now.html">Book Now</a> |
+                          </p>
+                      </div>
+                  </div> 
+                  </div>
+              </div>
+              <div class="p-2 col-4" style="font-size: medium;">
+                  <div class="align-middle" style="display: flex; justify-content: center; align-items: center;">
+                      <div>
+                          <p style="text-decoration: underline; text-align: center;">Newsletter</p>
+                          <form action="./newsletter-confirmation.html" method="get" style="font-size: small;">
+                              <div class="row g-3">
+                                  <div class="col-auto">
+                                      <label for="email" class="">Email</label>
+                                    </div>
+                                    <div class="col-auto">
+                                      <input type="text" class="form-control" id="email" placeholder="">
+                                      <br>
+                                    </div>
+                              </div>
+                              <div class="row">
+                                  <p>Click <a class="privacy-policy-link" href="./privacy-policy.html">here</a> to read the privacy policy</p>
+                              </div>
+                              <div class="row">
+                                  <div class="col-auto form-check">
+                                      <div class="ps-3 pb-3">
+                                        <input type="checkbox" class="form-check-input" type="checkbox" id="policy" name="policy" value="accept-policy">
+                                        <label class="form-check-label" for="policy">
+                                          I have read the privacy policy, and <br> I give my consent to be contacted.
+                                        </label>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-7">
+                                  </div>
+                                  <div class="col-5">
+                                      <button type="submit" class="btn btn-secondary btn-sm">Submit</button>
+                                  </div>
+                              </div>
+                          
+                          </form>
+                      </div> 
+                  </div>
+              </div>
+          </div>
+          <div class="row" style="text-align: center; font-size:x-small">
+              <p>Copyright © 2023 Goverment of Taniti. All rights reserved.</p>
+          </div>
+      </div>  
+    </footer>
+      
+    <script>
+        function loadContactPage(){
+            document.location = "./search-results.html";
+        }
+
+        for (var i = 0; i < document.links.length; i++) {
+          if (document.links[i].href == document.URL) {
+            console.log("a");
+            document.links[i].style = 'color: #496ec7; text-decoration:underline ; font-weight: bolder';
+          }
+        }
+
+        function selectEn(){
+          document.getElementById('navbarDropdownMenuLink').innerHTML = "EN";
+          document.getElementById('spanish-message').style='display:none';
+        }
+
+        function selectEs(){
+          document.getElementById('navbarDropdownMenuLink').innerHTML = "ES";
+          document.getElementById('spanish-message').style='display:block ; font-size:small; float:right';
+        }
+        
+    </script>
+  </body>
+</html>
