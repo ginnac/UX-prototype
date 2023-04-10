@@ -83,7 +83,7 @@
                     </a>
                   </li>
                   <li class="nav-item dropdown" style="margin-right: 10px;">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       EN
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -112,6 +112,7 @@
     
 
     <!--Book now-->
+
     <div style="display: none;" id="spanish-message">
       <p style="padding-right:10px; padding-top: 10px;">*Spanish selected. Language does not update within this prototype. </p>
     </div>
@@ -122,20 +123,29 @@
     </div>
 
     <div class="d-flex justify-content-end" style="font-weight: bold;">
-        <form action="/action_page.php" class="pe-5 align-items-center" >
+        <form action="" class="pe-5 align-items-center" >
             <label class="" for="arrival-date">Arrival date:</label>
             <input class="" type="date" id="arrival-date" name="arrival-date">
-            <label class="ps-2" for="departure-date">Departure date:</label>
+            <label  class="ps-2" for="departure-date">Departure date:</label>
             <input class="" type="date" id="departure-date" name="departure-date">
-            <input type="submit" class="btn btn-secondary btn-sm">
+            <button onclick=dateSelection() class="btn btn-secondary btn-sm"> Submit </button>
         </form>
-
     </div>
 
+    <div style="display: none;" id="date-selection">
+      <div class="d-flex justify-content-end pe-3">
+        <p id="date-selection-message" style="padding-right:20px; padding-top: 5px; font-size: small;"> </p>
+      </div>
+      
+    </div>
     
-    
+    <div id="booking-prompt" class="mt-5 mb-5" style="height: 340px;">
+      <div class="row ms-2 me-2 pt-3 pb-3 ps-3 pe-3 d-flex justify-content-center align-items-center" style="background-color: #d3d9e7; ">
+        <p class="mt-2 mb-4" style="text-align: center; font-weight: bold;">Please select arrival and departure dates to find available options</p>
+      </div>
+    </div>
 
-    <div class="container mt-5 pb-5">
+    <div id="booking-script" style="display:none" class="container mt-5 pb-5">
 
         <!--Lodging-->
         <div class="row pt-3 pb-3 ps-3 pe-3 d-flex justify-content-center align-items-center" style="background-color: #d3d9e7; ">
@@ -144,22 +154,22 @@
                 <H5 class="" style="color: #555454; ">Lodging</H5> 
                 <div class="dropdown ps-3">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                   Loding type
+                   Lodging type
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                      <li><a class="dropdown-item" href="#">All</a></li>
-                      <li><a class="dropdown-item" href="#">Resorts</a></li>
-                      <li><a class="dropdown-item" href="#">Hotels</a></li>
-                      <li><a class="dropdown-item" href="#">Bed and Breakfast</a></li>
+                      <li><a onclick=allLodging() id="all-lodging" class="dropdown-item" href="#">All</a></li>
+                      <li><a onclick=resorts() id="resorts" class="dropdown-item" href="#">Resorts</a></li>
+                      <li><a onclick=hotels() id="hotels" class="dropdown-item" href="#">Hotels</a></li>
+                      <li><a onclick=bedBreakfast() id="bed-breakfast-option" class="dropdown-item" href="#">Bed and Breakfast</a></li>
                     </ul>
                   </div>
             </div>
             
             <div class="row bg-secondary mt-3 ps-2 pe-2 pt-2 pb-2">
                 
-                <div class="form-check pb-3 pt-3">
-                    <input class="form-check-input mt-2" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
+                <div id="resort-selection" class="form-check pb-3 pt-3">
+                    <input class="form-check-input mt-2" type="checkbox" value="resort" id="flexCheckDefault-lodging">
+                    <label class="form-check-label" for="flexCheckDefault-lodging">
                         <div class="d-flex justify-content-center align-items-center ">
                             <div class="col-4 pe-2" style="border-radius: 5px;">
                                 <img src="images/resort.jpeg" style="width: 100%;"> 
@@ -199,9 +209,9 @@
                 </div>
 
 
-                <div class="form-check pb-3">
-                    <input class="form-check-input mt-2" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
+                <div id="hotel-selection" class="form-check pb-3">
+                    <input class="form-check-input mt-2" type="checkbox" value="hotel" id="flexCheckDefault-lodging">
+                    <label class="form-check-label" for="flexCheckDefault-lodging">
                         <div class="d-flex justify-content-center align-items-center ">
                             <div class="col-4 pe-2" style="border-radius: 5px;">
                                 <img src="images/hotel1.jpeg" style="width: 100%;"> 
@@ -238,9 +248,9 @@
                     </label>
                 </div>
 
-                <div class="form-check pb-3">
-                    <input class="form-check-input mt-2" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
+                <div id="bed-and-breakfast-selection" class="form-check pb-3">
+                    <input class="form-check-input mt-2" type="checkbox" value="bed-and-breakfast" id="flexCheckDefault-lodging">
+                    <label class="form-check-label" for="flexCheckDefault-lodging">
                         <div class="d-flex justify-content-center align-items-center ">
                             <div class="col-4 pe-2" style="border-radius: 5px;">
                                 <img src="images/bed-breakfast1.png" style="width: 100%;"> 
@@ -276,9 +286,9 @@
                 </div>
 
 
-                <div class="form-check pb-4 pt-3">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                  <label class="form-check-label" for="flexCheckDefault">
+                <div id="no-lodging-selection" class="form-check pb-4 pt-3">
+                  <input class="form-check-input" type="checkbox" value="no-lodging" id="flexCheckDefault-lodging">
+                  <label class="form-check-label" for="flexCheckDefault-lodging">
                       No Lodging                      
                   </label>
                 </div>
@@ -291,23 +301,23 @@
             <div class="d-flex justify-content-start align-items-center">
                 <H5 class="" style="color: #555454; ">Activities</H5> 
                 <div class="dropdown ps-3">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                    Activity type
                     </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                      <li><a class="dropdown-item" href="#">All</a></li>
-                      <li><a class="dropdown-item" href="#">Volcano Tour</a></li>
-                      <li><a class="dropdown-item" href="#">Fishing Tour</a></li>
-                      <li><a class="dropdown-item" href="#">Zip-lining in the Rainforest</a></li>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                      <li><a onclick=allActivities() id="all-activities" class="dropdown-item" href="#">All</a></li>
+                      <li><a onclick=volcanoTours() id="volcano-tours" class="dropdown-item" href="#">Volcano Tour</a></li>
+                      <li><a onclick=fishingTours() id="fishing-tours" class="dropdown-item" href="#">Fishing Tour</a></li>
+                      <li><a onclick=zipLiningTours() id="zip-lining-tours" class="dropdown-item" href="#">Zip-lining in the Rainforest</a></li>
                     </ul>
                   </div>
             </div>
             
             <div class="row bg-secondary mt-3 ps-2 pe-2 pt-2 pb-2">
                 
-                <div class="form-check mt-3 mb-3">
-                    <input class="form-check-input mt-2" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
+                <div id="volcano-tour-selection" class="form-check mt-3 mb-3">
+                    <input class="form-check-input mt-2" type="checkbox" value="volcano-tour" id="flexCheckDefault-tour">
+                    <label class="form-check-label" for="flexCheckDefault-tour">
                         <div class="d-flex justify-content-center align-items-center ">
                             <div class="col-4 pe-2" style="border-radius: 5px;">
                                 <img src="images/volcano tour.jpeg" style="width: 100%;"> 
@@ -346,9 +356,9 @@
                 </div>
 
 
-                <div class="form-check mb-3">
-                    <input class="form-check-input mt-2" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
+                <div id="fishing-tour-selection" class="form-check mb-3">
+                    <input class="form-check-input mt-2" type="checkbox" value="fishing-tour" id="flexCheckDefault-tour">
+                    <label class="form-check-label" for="flexCheckDefault-tour">
                         <div class="d-flex justify-content-center align-items-center ">
                             <div class="col-4 pe-2" style="border-radius: 5px;">
                                 <img src="images/fishing-tour1.png" style="width: 100%;"> 
@@ -385,9 +395,9 @@
                     </label>
                 </div>
 
-                <div class="form-check mb-3">
-                    <input class="form-check-input mt-2" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
+                <div id="zipline-tour-selection" class="form-check mb-3">
+                    <input class="form-check-input mt-2" type="checkbox" value="zip-line-tour" id="flexCheckDefault-tour">
+                    <label class="form-check-label" for="flexCheckDefault-tour">
                         <div class="d-flex justify-content-center align-items-center ">
                             <div class="col-4 pe-2" style="border-radius: 5px;">
                                 <img src="images/zip-line.png" style="width: 100%;"> 
@@ -423,9 +433,9 @@
                     </label>
                 </div>
 
-                <div class="form-check pb-4 pt-3">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                  <label class="form-check-label" for="flexCheckDefault">
+                <div id="no-activity-selection" class="form-check pb-4 pt-3">
+                  <input class="form-check-input" type="checkbox" value="no-activity" id="flexCheckDefault-tour">
+                  <label class="form-check-label" for="flexCheckDefault-tour">
                       No Activity                      
                   </label>
                 </div>
@@ -434,7 +444,7 @@
 
             <!--Checkout button-->
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <button type="button" class="btn btn-secondary mt-4 mb-5 btn-lg"> Submit Booking</button>
+                <button onclick=loadCheckoutPage() type="button" class="btn btn-secondary mt-4 mb-5 btn-lg"> Submit Booking</button>
             </div>
 
         </div> 
@@ -534,6 +544,18 @@
             document.location = "./search-results.html";
         }
 
+        function loadCheckoutPage(){
+            document.location = "./checkout.html";
+        }
+        
+        var now = new Date();
+        var day = ("0" + now.getDate()).slice(-2);
+        var month = ("0" + (now.getMonth() + 1)).slice(-2);
+        var today = now.getFullYear()+"-"+(month)+"-"+(day);
+
+        document.getElementById("arrival-date").value = today;
+        document.getElementById("departure-date").value = today;
+
         for (var i = 0; i < document.links.length; i++) {
           if (document.links[i].href == document.URL) {
             console.log("a");
@@ -551,6 +573,84 @@
           document.getElementById('spanish-message').style='display:block ; font-size:small; float:right';
         }
         
+        function dateSelection(){
+          event.preventDefault()
+          console.log(document.getElementById("arrival-date").value);
+          console.log(document.getElementById("departure-date").value);
+          document.getElementById('booking-prompt').style='display:none';
+          document.getElementById('booking-script').style='display:block';
+
+          document.getElementById('date-selection').style='display:block';
+          document.getElementById('date-selection-message').innerHTML ="";
+          var text = document.createTextNode("*Results based on date selection");
+          var element = document.getElementById('date-selection-message');
+          element.appendChild(text);
+        }
+
+        function allLodging(){
+          document.getElementById('dropdownMenuButton1').innerHTML = "Lodging Type";
+          document.getElementById('resort-selection').style="display:block";
+          document.getElementById('hotel-selection').style="display:block";
+          document.getElementById('bed-and-breakfast-selection').style="display:block";
+          document.getElementById('no-lodging-selection').style="display:block";
+        }
+
+        function resorts(){
+          document.getElementById('dropdownMenuButton1').innerHTML = "Resorts";
+          document.getElementById('resort-selection').style="display:block";
+          document.getElementById('hotel-selection').style="display:none";
+          document.getElementById('bed-and-breakfast-selection').style="display:none";
+          document.getElementById('no-lodging-selection').style="display:none";     
+        }
+
+        function hotels(){
+          document.getElementById('dropdownMenuButton1').innerHTML = "Hotels";
+          document.getElementById('resort-selection').style="display:none";
+          document.getElementById('hotel-selection').style="display:block";
+          document.getElementById('bed-and-breakfast-selection').style="display:none";
+          document.getElementById('no-lodging-selection').style="display:none";   
+        }
+
+        function bedBreakfast(){
+          document.getElementById('dropdownMenuButton1').innerHTML = "Bed and Breakfasts";
+          document.getElementById('resort-selection').style="display:none";
+          document.getElementById('hotel-selection').style="display:none";
+          document.getElementById('bed-and-breakfast-selection').style="display:block";
+          document.getElementById('no-lodging-selection').style="display:none";
+        }
+
+        function allActivities(){
+          document.getElementById('dropdownMenuButton2').innerHTML = "Activity Type";
+          document.getElementById('volcano-tour-selection').style="display:block";
+          document.getElementById('fishing-tour-selection').style="display:block";
+          document.getElementById('zipline-tour-selection').style="display:block";
+          document.getElementById('no-activity-selection').style="display:block";
+        }
+
+        function volcanoTours(){
+          document.getElementById('dropdownMenuButton2').innerHTML = "Volcano Tour";
+          document.getElementById('volcano-tour-selection').style="display:block";
+          document.getElementById('fishing-tour-selection').style="display:none";
+          document.getElementById('zipline-tour-selection').style="display:none";
+          document.getElementById('no-activity-selection').style="display:none";
+        }
+
+        function fishingTours(){
+          document.getElementById('dropdownMenuButton2').innerHTML = "Fishing Tour";
+          document.getElementById('volcano-tour-selection').style="display:none";
+          document.getElementById('fishing-tour-selection').style="display:block";
+          document.getElementById('zipline-tour-selection').style="display:none";
+          document.getElementById('no-activity-selection').style="display:none";
+        }
+
+        function zipLiningTours(){
+          document.getElementById('dropdownMenuButton2').innerHTML = "Zip-line Tour";
+          document.getElementById('volcano-tour-selection').style="display:none";
+          document.getElementById('fishing-tour-selection').style="display:none";
+          document.getElementById('zipline-tour-selection').style="display:block";
+          document.getElementById('no-activity-selection').style="display:none";
+        }
+
     </script>
   </body>
 </html>
